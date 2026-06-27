@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Meeting Expressions</title>
+
+<style>
+
+body{
+background:#111827;
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+color:white;
+margin:0;
+padding:24px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+h1{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.subtitle{
+color:#94A3B8;
+margin-bottom:32px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+gap:16px;
+}
+
+.card{
+
+background:#1F2937;
+
+border:1px solid #374151;
+
+border-radius:16px;
+
+padding:18px;
+
+transition:0.2s;
+
+}
+
+.card:hover{
+
+transform:translateY(-2px);
+
+}
+
+.expression{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+}
+
+.chinese{
+
+color:#CBD5E1;
+
+margin-bottom:12px;
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:4px 10px;
+
+border-radius:999px;
+
+background:#0F766E;
+
+font-size:12px;
+
+margin-bottom:16px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:8px;
+
+}
+
+button{
+
+background:#2563EB;
+
+border:none;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:0.9;
+
+}
+
+.favorite{
+
+background:#374151;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>English Meeting Expressions</h1>
+
+<p class="subtitle">
+
+Meeting English • Pronunciation Learning
+
+</p>
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="expression">
+
+Got it.
+
+</div>
+
+<div class="chinese">
+
+收到，懂了
+
+</div>
+
+<div class="tag">
+
+Common
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('Got it')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('Got it')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="expression">
+
+I see.
+
+</div>
+
+<div class="chinese">
+
+原来如此
+
+</div>
+
+<div class="tag">
+
+Daily
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('I see')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('I see')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="expression">
+
+Makes sense.
+
+</div>
+
+<div class="chinese">
+
+有道理
+
+</div>
+
+<div class="tag">
+
+Discussion
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('Makes sense')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('Makes sense')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="expression">
+
+I understand.
+
+</div>
+
+<div class="chinese">
+
+我理解了
+
+</div>
+
+<div class="tag">
+
+Formal
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('I understand')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('I understand')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="expression">
+
+I hear you.
+
+</div>
+
+<div class="chinese">
+
+理解你的感受
+
+</div>
+
+<div class="tag">
+
+Empathy
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('I hear you')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('I hear you')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="expression">
+
+Noted.
+
+</div>
+
+<div class="chinese">
+
+已知悉
+
+</div>
+
+<div class="tag">
+
+Business
+
+</div>
+
+<div class="buttons">
+
+<button onclick="speak('Noted')">
+
+🔊 Play
+
+</button>
+
+<button onclick="speakSlow('Noted')">
+
+🐢 Slow
+
+</button>
+
+<button class="favorite">
+
+⭐
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+<script>
+
+function speak(text){
+
+speechSynthesis.cancel();
+
+let utterance = new SpeechSynthesisUtterance(text);
+
+utterance.lang='en-US';
+
+utterance.rate=1;
+
+speechSynthesis.speak(utterance);
+
+}
+
+
+function speakSlow(text){
+
+speechSynthesis.cancel();
+
+let utterance = new SpeechSynthesisUtterance(text);
+
+utterance.lang='en-US';
+
+utterance.rate=0.7;
+
+speechSynthesis.speak(utterance);
+
+}
+
+</script>
+
+</body>
+
+</html>
